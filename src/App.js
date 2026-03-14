@@ -24,7 +24,7 @@ function App() {
   element={<PrivateRoute>
       <List />
     </PrivateRoute>}/>
-        <Route path="/details" element={<Details />} />
+        <Route path="/details/:id" element={<Details />} />
         <Route path="/result" element={<Result />} />
       </Routes>
     </BrowserRouter>
