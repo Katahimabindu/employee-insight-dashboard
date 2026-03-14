@@ -135,8 +135,8 @@ return (
 //merge
 <div style={{marginBottom:"20px"}}>
 <button onClick={mergeImages}>Merge Image</button></div>
- {Photo && ( <div>
-    <h3>Merged Image</h3><img src={Photo} width="300" alt="merged"/> </div>)}
+ {Photo && ( <div style={{marginTop:"20px"}}>
+    <h3>Audit Image</h3><img src={Photo} width="300" alt="Audit Result" style={{border:"2px solid #444"}}/> </div>)}
 
         </div>
     );

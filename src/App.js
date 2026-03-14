@@ -6,6 +6,7 @@ import Result from './pages/Result';
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { Navigate } from "react-router-dom";
+import Analytics from './pages/Analytics';
 function PrivateRoute({ children }) {
 
   const { loggedIn } = useContext(AuthContext);
@@ -18,14 +19,15 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/login" element={<Login />} />
+        
         <Route
   path="/list"
   element={<PrivateRoute>
       <List />
     </PrivateRoute>}/>
         <Route path="/details/:id" element={<Details />} />
-        <Route path="/result" element={<Result />} />
+        
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
     </BrowserRouter>
   );

@@ -35,6 +35,7 @@ export default function List() {
                         salary:item[5],
                     }));
         setEmployees(mapped);
+        localStorage.setItem("employees",JSON.stringify(mapped));
       } else {
         console.log("Unexpected API response format:", result);
         setEmployees([]);
@@ -69,6 +70,7 @@ const visibleRows=employees.slice(startIndex,endIndex);
     return (
 <div className="container" style={{padding:"20px"}}>
             <h2>Employee List</h2>
+            <button onClick={()=>navigate("/analytics")} style={{marginBottom:"10px"}}>View Analytics</button>
             <div ref={containerRef} onScroll={onScroll} style={{height:containerHeight,overflowY:"auto",border:"1px solid #ccc",position:"relative"}}>
            <div style={{height:totalHeight,position:"relative"}}>
             {visibleRows.map((emp,i)=>(
